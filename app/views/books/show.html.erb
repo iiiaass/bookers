@@ -8,3 +8,6 @@
 
 <%=link_to "back",books_path %>
 
+<% if flash[:notice] %>
+　<%= flash[:notice] %>
+<% end %>
