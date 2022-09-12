@@ -13,5 +13,16 @@
 <%=link_to "Show",book_path(@book.id)%>
 <%=link_to "back",books_path %>
 
+<% if @book.errors.any?%>
+ <%= @book.errors.count %>The page you were looking for doesn't exist.
+You may have mistyped the address or the page may have moved.
 
+If you are the application owner check the logs for more information.
+ <ul>
+
+   <% @book.errors.full_messages.each do |message| %>
+   <li><%=message%></li>
+ </ul>
+ <%end%>
+<%end%>
 
